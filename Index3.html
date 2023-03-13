@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" charset="utf-8">
+    </title>
+    <title>Задание2</title>
+</head>
+<html>
+
+<body>
+    <header>
+        <h2>Задание 2</h2>
+    </header>
+    <main>
+        <div>
+            <label> Тип файла:</label>
+            <div id="f_size_l"></div>
+           
+        </div>
+        <div>
+            <nav id="error_nav">
+
+            </nav>
+        </div>
+        <script>
+            var l = document.getElementById("f_size_l");
+            var xhr_fsize = new XMLHttpRequest();
+            xhr_fsize.open("HEAD", "image.png");
+            xhr_fsize.onload = function () {
+                if (xhr_fsize.status == 200) {
+                    //alert(xhr_fsize.getResponseHeader("Content-Length"));
+                    document.getElementById("f_size_l").innerText =
+                        String(xhr_fsize.getResponseHeader("Content-Type"));
+                }
+                else {
+                    document.getElementById("error_nav").value = xhr_fsize.responseText;
+                }
+            }
+            xhr_fsize.send();
+        </script>
+    </main>
+
+    <footer>
+        <label id="dat_i"></label>
+        <script>
+            var now = new Date();
+            document.getElementById("dat_i").textContent = now;
+        </script>
+    </footer>
+</body>
+
+</html>

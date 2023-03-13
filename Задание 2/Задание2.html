@@ -54,9 +54,9 @@
                 </div>
             </div>
             <div>
-                <div class="text_div">
+                      <div class="text_div">
                        Определение размера файла file.tar.gz
-                       <div>
+                      <div>
                         <div class="text_div">
                               Файл сохранен на сервере
                         </div>
@@ -81,6 +81,61 @@
                             <img src="Задание2 — Firefox Developer Edition 12.03.2023 16_31_04.png">
                        </div>
                 </div>
+            </div>
+            <div>
+                <div class="text_div">Получение главной страницы</div>
+                <div>
+                    <div class="text_div">результат запроса главной страницы учебного сервера через telnet</div>
+                    <img src="212.192.134.20 - PuTTY 13.03.2023 15_53_58.png">
+                </div>
+                <div>
+                    <div class="text_div">
+                        Программа получения главной страницы сервера <i>
+                        forbackend1.mykeencentvi12.keenetic.pro
+                        </i>
+                    </div>
+                     <div>
+                        <div class="text_div">
+                            Основной метод
+                        </div>
+                       <img src="ConsoleApp3 - Microsoft Visual Studio 13.03.2023 16_43_00.png">
+                       <div class="text_div">
+                            Функция возращающая результат запроса
+                       </div>
+                       <img src="ConsoleApp3 - Microsoft Visual Studio 13.03.2023 16_43_11.png">
+                       <div class="text_div">
+                          Получение заголовков
+                       </div>
+                       <img src="ConsoleApp3 - Microsoft Visual Studio 13.03.2023 16_44_46.png">
+                    </div>
+                    <div class="text_div">
+                      <a href="Запрос главной страницы разными весриями http.txt" download="результат.txt">Скачать результат работы программы</a>   
+                    </div>
+                </div>
+
+            </div>
+            <div>
+               <div class="text_div">
+                   Медиатип image.png
+               </div>
+               <div class="text_div">HTML страница показывающая тип ресурса image.png</div>
+              <img src="Задание2 — Firefox Developer Edition 13.03.2023 17_20_52.png">    <div class="text_div">Скрипт запрашивающий тип ресурса и извлекающий ответ</div>
+              <img src="Задание2 — Firefox Developer Edition 13.03.2023 17_21_13.png"> 
+             
+               <div class="text_div">HEAD запрос ресурса image.png</div>
+               <img src="Задание2 — Firefox Developer Edition 13.03.2023 17_21_27.png">
+            </div>
+            <div style="display: block;align-content: center;text-align: center;font-size: 45px;">
+                <button type="button" id="dowfile" style="background-color: aqua;">Скачать 100 байт файла</button>
+                <script>
+                    var but=document.getElementById("dowfile");
+                    but.addEventListener("click",function(){
+                          var request=new XMLHttpRequest();
+                          request.open("GET","file.tar.gz");
+                          request.setRequestHeader("Content-Length",100);
+                          request.send();
+                    });
+                </script>
             </div>
         </main>
     </body>
